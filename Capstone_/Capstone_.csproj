@@ -254,8 +254,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminsController.cs" />
+    <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PersonalUsersController.cs" />
     <Compile Include="Controllers\TwilioController.cs" />
     <Compile Include="Filters\ValidateTwilioRequestAttribute.cs" />
     <Compile Include="Filters\ValidateTwilioRequestImprovedAttribute.cs" />
@@ -341,6 +345,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Admins\Create.cshtml" />
+    <Content Include="Views\Admins\Delete.cshtml" />
+    <Content Include="Views\Admins\Details.cshtml" />
+    <Content Include="Views\Admins\Edit.cshtml" />
+    <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\Companies\Create.cshtml" />
+    <Content Include="Views\Companies\Delete.cshtml" />
+    <Content Include="Views\Companies\Details.cshtml" />
+    <Content Include="Views\Companies\Edit.cshtml" />
+    <Content Include="Views\Companies\Index.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\PersonalUsers\Create.cshtml" />
+    <Content Include="Views\PersonalUsers\Delete.cshtml" />
+    <Content Include="Views\PersonalUsers\Details.cshtml" />
+    <Content Include="Views\PersonalUsers\Edit.cshtml" />
+    <Content Include="Views\PersonalUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

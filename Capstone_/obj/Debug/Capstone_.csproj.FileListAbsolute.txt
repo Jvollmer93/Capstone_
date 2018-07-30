@@ -271,3 +271,9 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Twilio.dll
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.Tokens.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Twilio.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Net.Http.Formatting.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.WebHost.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Net.Http.Formatting.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.WebHost.xml
