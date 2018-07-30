@@ -14,6 +14,12 @@ namespace Capstone_
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Twilio Alert",
+                url: "Twilio/{letterCase}",
+                defaults: new { controller = "Home", action = "Twilio", letterCase = "upper" }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

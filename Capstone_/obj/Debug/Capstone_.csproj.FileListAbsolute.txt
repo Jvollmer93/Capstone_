@@ -261,7 +261,6 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.csproj
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.csproj.CopyComplete
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.dll
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.pdb
-C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.csprojAssemblyReference.cache
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.Logging.dll
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.Tokens.dll
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.IdentityModel.Tokens.Jwt.dll
@@ -277,3 +276,12 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.WebHos
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Net.Http.Formatting.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.Web.Http.WebHost.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.JsonWebTokens.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.Logging.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.csprojAssemblyReference.cache
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.Rolesmigration.resources

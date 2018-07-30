@@ -10,13 +10,13 @@ namespace Capstone_.Controllers
 {
     public class HomeController : TwilioController
     {
+        //GET /home/index
         public ActionResult Index()
         {
-            var response = new VoiceResponse();
-            response.Say("Twilio");
-            return TwiML(response);
+            return View();
         }
 
+        //GET /home/about
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -29,6 +29,19 @@ namespace Capstone_.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        //[HttpPost]
+        //public ActionResult Contact(string message)
+        //{
+        //    ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
+        public ActionResult Twilio(string name, string eventName)
+        {
+            var response = new VoiceResponse();
+            response.Say(name + " has invited you to" + eventName);
+            return TwiML(response);
         }
     }
 }
