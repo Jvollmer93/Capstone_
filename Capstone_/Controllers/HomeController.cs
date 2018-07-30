@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Twilio.TwiML;
+using Twilio.AspNet.Mvc;
 
 namespace Capstone_.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : TwilioController
     {
         public ActionResult Index()
         {
-            return View();
+            var response = new VoiceResponse();
+            response.Say("Twilio");
+            return TwiML(response);
         }
 
         public ActionResult About()
