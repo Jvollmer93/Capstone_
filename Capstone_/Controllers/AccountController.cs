@@ -148,7 +148,7 @@ namespace Capstone_.Controllers
                 AspNetRoles = roles
             };
 
-            return View();
+            return View(rvm);
         }
 
         //
@@ -177,7 +177,7 @@ namespace Capstone_.Controllers
                         if (result.Succeeded)
                         {
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Create", "Admins");
                         }
                         else
                         {
@@ -191,7 +191,7 @@ namespace Capstone_.Controllers
                         if (result.Succeeded)
                         {
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Create", "Companies");
                         }
                         else
                         {
@@ -206,13 +206,17 @@ namespace Capstone_.Controllers
                         if (result.Succeeded)
                         {
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Create", "PersonalUsers");
                         }
                         else
                         {
                             AddErrors(result);
                         }
 
+                    }
+                    else
+                    {
+                        return View(model);
                     }
                 }
             return View(model);

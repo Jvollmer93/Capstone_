@@ -274,6 +274,18 @@
     <Compile Include="Migrations\201807302151245_Roles migration.Designer.cs">
       <DependentUpon>201807302151245_Roles migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807310053025_roles.cs" />
+    <Compile Include="Migrations\201807310053025_roles.Designer.cs">
+      <DependentUpon>201807310053025_roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807310246344_changes user company.cs" />
+    <Compile Include="Migrations\201807310246344_changes user company.Designer.cs">
+      <DependentUpon>201807310246344_changes user company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807310316443_Event Location.cs" />
+    <Compile Include="Migrations\201807310316443_Event Location.Designer.cs">
+      <DependentUpon>201807310316443_Event Location.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -426,6 +438,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807302151245_Roles migration.resx">
       <DependentUpon>201807302151245_Roles migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807310053025_roles.resx">
+      <DependentUpon>201807310053025_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807310246344_changes user company.resx">
+      <DependentUpon>201807310246344_changes user company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807310316443_Event Location.resx">
+      <DependentUpon>201807310316443_Event Location.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

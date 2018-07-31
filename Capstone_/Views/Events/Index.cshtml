@@ -55,3 +55,28 @@
 }
 
 </table>
+<head>
+<style>
+    #map {
+        height: 500px;
+        width: 800px;
+    }
+</style>
+</head>
+<body>
+    <center><h2>Events</h2></center>
+    <br/>
+        <center>
+            <div id="map"></div>
+        </center>
+        <script>      
+            function initMap() {
+                var Milwaukee = { lat: 43.0389, lng: -87.9065 };
+                var map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center: Milwaukee });
+                //var marker = new google.maps.Marker({ posistion: Milwaukee, map: map });
+            }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRMFv2YIYRFyNP9nWbsz-z6JYYd-oxwo&callback=initMap" >
+        </script>
+</body>

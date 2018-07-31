@@ -285,3 +285,6 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Microsoft.IdentityMode
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\System.IdentityModel.Tokens.Jwt.pdb
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.csprojAssemblyReference.cache
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.Rolesmigration.resources
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.roles.resources
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.changesusercompany.resources
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.EventLocation.resources
