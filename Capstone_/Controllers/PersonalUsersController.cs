@@ -123,5 +123,10 @@ namespace Capstone_.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Calendar()
+        {
+            return View();
+        }
     }
 }
