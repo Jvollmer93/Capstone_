@@ -149,3 +149,5 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SharpCompr
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SendGrid.pdb
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SendGrid.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\ServiceStack.Text.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\Geocoder.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\Zender.Mail.dll

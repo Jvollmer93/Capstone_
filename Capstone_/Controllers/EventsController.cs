@@ -46,7 +46,7 @@ namespace Capstone_.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Date,StartTime,EndTime,IsPublic")] Event @event)
+        public ActionResult Create([Bind(Include = "Id,Name,Date,Location,StartTime,EndTime,IsPublic")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Capstone_.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit([Bind(Include = "Id,Name,Date,StartTime,EndTime,IsPublic")] Event @event)
+        public ActionResult Edit([Bind(Include = "Id,Name,Date,Location,StartTime,EndTime,IsPublic")] Event @event)
         {
             if (ModelState.IsValid)
             {

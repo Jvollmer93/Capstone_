@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.StartTime)
         </th>
         <th>
@@ -26,8 +29,9 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    if (item.IsPublic)
+@foreach (var item in Model)
+{
+    if (item.IsPublic || User.IsInRole("Admin"))
     {
     <tr>
         <td>
@@ -35,6 +39,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StartTime)
@@ -60,9 +67,24 @@
     }
 </style>
 </head>
+
+@{List<string> urls = new List<string>();
+    foreach (var item in Model)
+    {
+        string itemLocation = item.Location;
+        var url = ("https://maps.googleapis.com/maps/api/geocode/json?address="+ itemLocation + "&output=xml&utf8&sensor=false&key=AIzaSyBgT7_fsm3Isp67sXF9nHepRxaO4fYyJYQ");
+        for(int i = 0; i < urls.Count; i++)
+        {
+            if (url == urls[i])
+            {
+                continue;
+            }
+        }
+        urls.Add(url);
+    }
+}
 <body>
     <center><h2>Events</h2></center>
-    <br/>
         <center>
             <div id="map"></div>
         </center>
@@ -77,3 +99,4 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRMFv2YIYRFyNP9nWbsz-z6JYYd-oxwo&callback=initMap" >
         </script>
 </body>
+

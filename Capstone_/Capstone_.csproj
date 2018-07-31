@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Geocoder, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geocoder.0.1.0.0\lib\net45\Geocoder.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.35.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.35.1\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -319,6 +322,10 @@
     <Compile Include="Migrations\201807310342554_Admin,Company,Personal Application Users.Designer.cs">
       <DependentUpon>201807310342554_Admin,Company,Personal Application Users.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807311949296_locations.cs" />
+    <Compile Include="Migrations\201807311949296_locations.Designer.cs">
+      <DependentUpon>201807311949296_locations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -460,7 +467,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Email\" />
-    <Folder Include="Views\MailChimp\" />
     <Folder Include="Views\SMS\" />
     <Folder Include="Views\Twilio\" />
   </ItemGroup>
@@ -487,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807310342554_Admin,Company,Personal Application Users.resx">
       <DependentUpon>201807310342554_Admin,Company,Personal Application Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807311949296_locations.resx">
+      <DependentUpon>201807311949296_locations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
