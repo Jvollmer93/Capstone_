@@ -139,3 +139,13 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\Microsoft.
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\Microsoft.IdentityModel.Logging.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\Microsoft.IdentityModel.Tokens.pdb
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\RestSharp.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\MailChimp.Api.Net.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\MailChimp.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\MailChimp.Net.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SendGrid.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\ServiceStack.Text.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SharpCompress.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SendGrid.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\SendGrid.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_.Tests\bin\Debug\ServiceStack.Text.xml

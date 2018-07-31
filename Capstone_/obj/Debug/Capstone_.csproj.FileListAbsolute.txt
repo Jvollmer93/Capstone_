@@ -289,3 +289,17 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrat
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.changesusercompany.resources
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.EventLocation.resources
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.AdminCompanyPersonalApplicationUsers.resources
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\RestSharp.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Google.Apis.Gmail.v1.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Google.Apis.Gmail.v1.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Google.Apis.Gmail.v1.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\SendGrid.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\SendGrid.pdb
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\SendGrid.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\MailChimp.Api.Net.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\MailChimp.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\MailChimp.Net.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\ServiceStack.Text.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\SharpCompress.dll
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\ServiceStack.Text.xml
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Zender.Mail.dll

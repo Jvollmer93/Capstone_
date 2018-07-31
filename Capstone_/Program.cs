@@ -1,8 +1,12 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Calendar.v3;
 using Google.Apis.Calendar.v3.Data;
+using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using RestSharp;
+using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +22,7 @@ namespace CalendarQuickstart
         // If modifying these scopes, delete your previously saved credentials
         // at ~/.credentials/calendar-dotnet-quickstart.json
         static string[] Scopes = { CalendarService.Scope.CalendarReadonly };
-        static string ApplicationName = "Google Calendar API .NET Quickstart";
+        static string CalendarApplicationName = "Google Calendar API .NET Quickstart";
 
         static void Main(string[] args)
         {
@@ -37,23 +41,23 @@ namespace CalendarQuickstart
                 Console.WriteLine("Credential file saved to: " + credPath);
             }
 
-            // Create Google Calendar API service.
-            var service = new CalendarService(new BaseClientService.Initializer()
+        // Create Google Calendar API service.
+        var calendarService = new CalendarService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = ApplicationName,
+                ApplicationName = CalendarApplicationName,
             });
 
             // Define parameters of request.
-            EventsResource.ListRequest request = service.Events.List("primary");
-            request.TimeMin = DateTime.Now;
-            request.ShowDeleted = false;
-            request.SingleEvents = true;
-            request.MaxResults = 10;
-            request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
+            EventsResource.ListRequest calendarRequest = calendarService.Events.List("primary");
+            calendarRequest.TimeMin = DateTime.Now;
+            calendarRequest.ShowDeleted = false;
+            calendarRequest.SingleEvents = true;
+            calendarRequest.MaxResults = 10;
+            calendarRequest.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
 
             // List events.
-            Events events = request.Execute();
+            Events events = calendarRequest.Execute();
             Console.WriteLine("Upcoming events:");
             if (events.Items != null && events.Items.Count > 0)
             {

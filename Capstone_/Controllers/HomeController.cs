@@ -5,10 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using Twilio.TwiML;
 using Twilio.AspNet.Mvc;
+using System.Threading.Tasks;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using Capstone_.Models;
+using System.Net;
+using System.Net.Mail;
 
 namespace Capstone_.Controllers
 {
-    public class HomeController : TwilioController
+    public class HomeController : Controller
     {
         //GET /home/index
         public ActionResult Index()
@@ -27,19 +33,6 @@ namespace Capstone_.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
-        //[HttpPost]
-        //public ActionResult Contact(string message)
-        //{
-        //    ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
-        public ActionResult Twilio(string name, string eventName)
-        {
-            var response = new VoiceResponse();
-            response.Say(name + " has invited you to" + eventName);
-            return TwiML(response);
         }
     }
 }
