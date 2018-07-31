@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using System.Threading.Tasks;
 using Zender.Mail;
 using System.Net.Mail;
+using Capstone_.Models;
 
 namespace Capstone_.Controllers
 {
@@ -68,7 +69,7 @@ namespace Capstone_.Controllers
             message.Body = "<p><b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit.</p>";
             message.IsBodyHtml = true;
             message.SendMailAsync();
-            return View("Index");
+            return View("~/Views/Home/Index.cshtml");
         }
 
     }
