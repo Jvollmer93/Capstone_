@@ -18,14 +18,8 @@ namespace Capstone_.Models
             return userIdentity;
         }
     }
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Admin> Admins { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Event> Events { get; set; }
-        public DbSet<PersonalUser> PersonalUsers { get; set; }
-
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -35,5 +29,9 @@ namespace Capstone_.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<PersonalUser> PersonalUsers { get; set; }
     }
 }

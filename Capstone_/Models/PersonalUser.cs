@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -20,5 +21,9 @@ namespace Capstone_.Models
         public List<PersonalUser> PersonalFollowing { get; set; }
         public List<Company> CompanyFollowwers { get; set; }
         public List<Company> CompanyFollowing { get; set; }
+
+        [ForeignKey("ApplicationUser")]
+        public string ApplicationUserID { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }

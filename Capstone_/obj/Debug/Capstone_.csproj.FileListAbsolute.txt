@@ -288,3 +288,4 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrat
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.roles.resources
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.changesusercompany.resources
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.EventLocation.resources
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.AdminCompanyPersonalApplicationUsers.resources
