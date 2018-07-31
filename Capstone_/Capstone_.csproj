@@ -260,6 +260,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PersonalUsersController.cs" />
+    <Compile Include="Controllers\SMSController.cs" />
     <Compile Include="Controllers\TwilioController.cs" />
     <Compile Include="Filters\ValidateTwilioRequestAttribute.cs" />
     <Compile Include="Filters\ValidateTwilioRequestImprovedAttribute.cs" />
@@ -429,6 +430,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SMS\" />
     <Folder Include="Views\Twilio\" />
   </ItemGroup>
   <ItemGroup>
