@@ -67,20 +67,21 @@
     }
 </style>
 </head>
-
 @{List<string> urls = new List<string>();
     foreach (var item in Model)
     {
-        string itemLocation = item.Location;
-        var url = ("https://maps.googleapis.com/maps/api/geocode/json?address="+ itemLocation + "&output=xml&utf8&sensor=false&key=AIzaSyBgT7_fsm3Isp67sXF9nHepRxaO4fYyJYQ");
-        for(int i = 0; i < urls.Count; i++)
-        {
-            if (url == urls[i])
-            {
-                continue;
-            }
-        }
-        urls.Add(url);
+        //string itemLocation = item.Location;
+        //var url = ("https://maps.googleapis.com/maps/api/geocode/json?address=" + itemLocation + "&key=AIzaSyBgT7_fsm3Isp67sXF9nHepRxaO4fYyJYQ");
+        //for (int i = 0; i < urls.Count; i++)
+        //{
+        //    if (url == urls[i])
+        //    {
+        //        goto OUTERCONTINUE;
+        //    }
+        //}
+        //if (item.IsPublic | User.IsInRole("Admin"))
+        //{ urls.Add(url); }
+        //OUTERCONTINUE: continue;
     }
 }
 <body>
@@ -88,12 +89,18 @@
         <center>
             <div id="map"></div>
         </center>
-        <script>      
+        <script>
             function initMap() {
-                var Milwaukee = { lat: 43.0389, lng: -87.9065 };
-                var map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center: Milwaukee });
-                //var marker = new google.maps.Marker({ posistion: Milwaukee, map: map });
-            }
+            var Milwaukee = { lat: 43.0389, lng: -87.9065 };
+        var map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center: Milwaukee });
+                @foreach (var item in urls) {
+                    var lat = item;
+                        <text>
+                        var marker = new google.maps.Marker({
+            //insert markers lat/long here
+                        });</text>
+                    }
+}
         </script>
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNRMFv2YIYRFyNP9nWbsz-z6JYYd-oxwo&callback=initMap" >
