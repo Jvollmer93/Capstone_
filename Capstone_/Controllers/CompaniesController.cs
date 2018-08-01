@@ -119,6 +119,39 @@ namespace Capstone_.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult FollowCompany(Company companyToFollow, Company companyThatFollows)
+        {
+            foreach(var follower in companyToFollow.CompanyFollowwers)
+            {
+                if (follower == companyThatFollows) 
+                return View("Index");
+            }
+            foreach (var following in companyThatFollows.CompanyFollowing)
+            {
+                if (following == companyToFollow) 
+                return View("Index");
+            }
+            companyThatFollows.CompanyFollowing.Add(companyToFollow);
+            companyToFollow.CompanyFollowwers.Add(companyThatFollows);
+            return View("Index");
+        }
+        public ActionResult FollowPerson(PersonalUser personToFollow, Company companyThatFollows)
+        {
+            foreach (var follower in personToFollow.CompanyFollowwers)
+            {
+                if (follower == companyThatFollows)
+                    return View("Index");
+            }
+            foreach (var following in companyThatFollows.PersonalFollowing)
+            {
+                if (following == personToFollow)
+                    return View("Index");
+            }
+            companyThatFollows.PersonalFollowing.Add(personToFollow);
+            personToFollow.CompanyFollowwers.Add(companyThatFollows);
+            return View("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
