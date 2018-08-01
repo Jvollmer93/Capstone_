@@ -305,3 +305,4 @@ C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\ServiceStack.Text.xml
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Zender.Mail.dll
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\bin\Geocoder.dll
 C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.locations.resources
+C:\Users\jvoll\Documents\Projects\Capstone_\Capstone_\obj\Debug\Capstone_.Migrations.updateapplicationuser.resources

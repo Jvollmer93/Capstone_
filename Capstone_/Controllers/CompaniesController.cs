@@ -120,36 +120,36 @@ namespace Capstone_.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Company, PersonalUser")]
-        public ActionResult FollowCompany(Company companyToFollow)
-        {
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+        //[Authorize(Roles = "Company, PersonalUser")]
+        //public ActionResult FollowCompany(Company companyToFollow)
+        //{
+        //    string currentUserId = User.Identity.GetUserId();
+        //    ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
 
-            foreach(var following in currentUser.CompaniesIFollow)
-            {
-                if (following.Id == companyToFollow.Id)
-                    return View("Index");
-            }
+        //    foreach(var following in currentUser.CompaniesIFollow)
+        //    {
+        //        if (following.Id == companyToFollow.Id)
+        //            return View("Index");
+        //    }
 
-            currentUser.CompaniesIFollow.Add(companyToFollow);
-            return View("Index");
-        }
-        [Authorize(Roles = "Company, PersonalUser")]
-        public ActionResult FollowPerson(PersonalUser personToFollow)
-        {
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+        //    currentUser.CompaniesIFollow.Add(companyToFollow);
+        //    return View("Index");
+        //}
+        //[Authorize(Roles = "Company, PersonalUser")]
+        //public ActionResult FollowPerson(PersonalUser personToFollow)
+        //{
+        //    string currentUserId = User.Identity.GetUserId();
+        //    ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
 
-            foreach (var following in currentUser.CompaniesIFollow)
-            {
-                if (following.Id == personToFollow.Id)
-                    return View("Index");
-            }
+        //    foreach (var following in currentUser.CompaniesIFollow)
+        //    {
+        //        if (following.Id == personToFollow.Id)
+        //            return View("Index");
+        //    }
 
-            currentUser.PersonsIFollow.Add(personToFollow);
-            return View("Index");
-        }
+        //    currentUser.PersonsIFollow.Add(personToFollow);
+        //    return View("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

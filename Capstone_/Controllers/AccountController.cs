@@ -18,6 +18,7 @@ namespace Capstone_.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -471,6 +472,37 @@ namespace Capstone_.Controllers
             }
 
             base.Dispose(disposing);
+        }
+
+        [Authorize(Roles = "Company, PersonalUser")]
+        public ActionResult FollowCompany(Company companyToFollow)
+        {
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            foreach (var following in currentUser.CompaniesIFollow)
+            {
+                if (following.Id == companyToFollow.Id)
+                    return View("Index");
+            }
+
+            currentUser.CompaniesIFollow.Add(companyToFollow);
+            return View("Index");
+        }
+        [Authorize(Roles = "Company, PersonalUser")]
+        public ActionResult FollowPerson(PersonalUser personToFollow)
+        {
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            foreach (var following in currentUser.CompaniesIFollow)
+            {
+                if (following.Id == personToFollow.Id)
+                    return View("Index");
+            }
+
+            currentUser.PersonsIFollow.Add(personToFollow);
+            return View("Index");
         }
 
         #region Helpers
