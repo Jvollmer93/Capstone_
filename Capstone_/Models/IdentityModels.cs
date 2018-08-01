@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -11,24 +10,6 @@ namespace Capstone_.Models
     public class ApplicationUser : IdentityUser
     {
         public string Role { get; set; }
-        private List<Company> companiesIFollow;
-
-        public List<Company> CompaniesIFollow
-        {
-            get { return companiesIFollow; }
-            set { companiesIFollow = value; }
-        }
-        private List<PersonalUser> personsIFollow;
-
-        public List<PersonalUser> PersonsIFollow
-        {
-            get { return personsIFollow; }
-            set { personsIFollow = value; }
-        }
-        //public List<Company> CompanyFollowers { get; set; }
-        //public List<Company> CompaniesIFollow { get; set; }
-        //public List<PersonalUser> PersonalFollowers { get; set; }
-        //public List<PersonalUser> PersonsIFollow { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -37,8 +18,14 @@ namespace Capstone_.Models
             return userIdentity;
         }
     }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<PersonalUser> PersonalUsers { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -48,9 +35,5 @@ namespace Capstone_.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Admin> Admins { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Event> Events { get; set; }
-        public DbSet<PersonalUser> PersonalUsers { get; set; }
     }
 }

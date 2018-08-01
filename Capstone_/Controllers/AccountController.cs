@@ -18,7 +18,6 @@ namespace Capstone_.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -148,8 +147,7 @@ namespace Capstone_.Controllers
             {
                 AspNetRoles = roles
             };
-
-            return View(rvm);
+                        return View();
         }
 
         //
@@ -178,7 +176,7 @@ namespace Capstone_.Controllers
                         if (result.Succeeded)
                         {
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                            return RedirectToAction("Create", "Admins");
+                            return RedirectToAction("Index", "Home");
                         }
                         else
                         {
@@ -192,7 +190,7 @@ namespace Capstone_.Controllers
                         if (result.Succeeded)
                         {
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                            return RedirectToAction("Create", "Companies");
+                            return RedirectToAction("Index", "Home");
                         }
                         else
                         {
@@ -207,17 +205,13 @@ namespace Capstone_.Controllers
                         if (result.Succeeded)
                         {
                             await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                            return RedirectToAction("Create", "PersonalUsers");
+                            return RedirectToAction("Index", "Home");
                         }
                         else
                         {
                             AddErrors(result);
                         }
 
-                    }
-                    else
-                    {
-                        return View(model);
                     }
                 }
             return View(model);
@@ -472,39 +466,6 @@ namespace Capstone_.Controllers
             }
 
             base.Dispose(disposing);
-        }
-
-        [Authorize(Roles = "Company, PersonalUser")]
-        public ActionResult FollowCompany(int id)
-        {
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-            Company companyToFollow = db.Companies.FirstOrDefault(x => x.Id == id);
-
-            foreach (var following in currentUser.CompaniesIFollow)
-            {
-                if (following.Id == id)
-                    return View("Index");
-            }
-
-            currentUser.CompaniesIFollow.Add(companyToFollow);
-            return View("Index");
-        }
-        [Authorize(Roles = "Company, PersonalUser")]
-        public ActionResult FollowPerson(int id)
-        {
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
-            PersonalUser personToFollow = db.PersonalUsers.FirstOrDefault(x => x.Id == id);
-
-            foreach (var following in currentUser.CompaniesIFollow)
-            {
-                if (following.Id == id)
-                    return View("Index");
-            }
-
-            currentUser.PersonsIFollow.Add(personToFollow);
-            return View("Index");
         }
 
         #region Helpers
