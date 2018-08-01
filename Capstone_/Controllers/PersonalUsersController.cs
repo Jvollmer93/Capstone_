@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Capstone_.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Capstone_.Controllers
 {
@@ -118,40 +119,37 @@ namespace Capstone_.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        public ActionResult FollowCompany(Company companyToFollow, PersonalUser personThatFollows)
+        [Authorize(Roles = "Company, PersonalUser")]
+        public ActionResult FollowCompany(Company companyToFollow)
         {
-            foreach (var follower in companyToFollow.PersonalFollowwers)
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            foreach (var following in currentUser.CompaniesIFollow)
             {
-                if (follower == personThatFollows)
+                if (following.Id == companyToFollow.Id)
                     return View("Index");
             }
-            foreach (var following in personThatFollows.CompanyFollowing)
-            {
-                if (following == companyToFollow)
-                    return View("Index");
-            }
-            personThatFollows.CompanyFollowing.Add(companyToFollow);
-            companyToFollow.PersonalFollowwers.Add(personThatFollows);
+
+            currentUser.CompaniesIFollow.Add(companyToFollow);
             return View("Index");
         }
-        public ActionResult FollowPerson(PersonalUser personToFollow, PersonalUser personThatFollows)
+        [Authorize(Roles = "Company, PersonalUser")]
+        public ActionResult FollowPerson(PersonalUser personToFollow)
         {
-            foreach (var follower in personToFollow.PersonalFollowwers)
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            foreach (var following in currentUser.CompaniesIFollow)
             {
-                if (follower == personThatFollows)
+                if (following.Id == personToFollow.Id)
                     return View("Index");
             }
-            foreach (var following in personThatFollows.PersonalFollowing)
-            {
-                if (following == personToFollow)
-                    return View("Index");
-            }
-            personThatFollows.PersonalFollowing.Add(personToFollow);
-            personToFollow.PersonalFollowwers.Add(personThatFollows);
+
+            currentUser.PersonsIFollow.Add(personToFollow);
             return View("Index");
         }
-
+    
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -161,9 +159,5 @@ namespace Capstone_.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Calendar()
-        {
-            return View();
-        }
     }
 }

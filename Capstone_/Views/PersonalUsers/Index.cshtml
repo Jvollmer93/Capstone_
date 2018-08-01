@@ -41,8 +41,7 @@
             @Html.DisplayFor(modelItem => item.AcceptsEmailNotifications)
         </td>
         <td>
-            @Html.ActionLink("Follow", "Index", new { id = item.Id }) |
-            @*follow action in controller, add to list of followers*@
+            @Html.ActionLink("Follow", "FollowPerson", new { item }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
             @Html.ActionLink("Details", "Details", new { id = item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.Id })

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Capstone_.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Capstone_.Controllers
 {
@@ -119,36 +120,34 @@ namespace Capstone_.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult FollowCompany(Company companyToFollow, Company companyThatFollows)
+        [Authorize(Roles = "Company, PersonalUser")]
+        public ActionResult FollowCompany(Company companyToFollow)
         {
-            foreach(var follower in companyToFollow.CompanyFollowwers)
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            foreach(var following in currentUser.CompaniesIFollow)
             {
-                if (follower == companyThatFollows) 
-                return View("Index");
+                if (following.Id == companyToFollow.Id)
+                    return View("Index");
             }
-            foreach (var following in companyThatFollows.CompanyFollowing)
-            {
-                if (following == companyToFollow) 
-                return View("Index");
-            }
-            companyThatFollows.CompanyFollowing.Add(companyToFollow);
-            companyToFollow.CompanyFollowwers.Add(companyThatFollows);
+
+            currentUser.CompaniesIFollow.Add(companyToFollow);
             return View("Index");
         }
-        public ActionResult FollowPerson(PersonalUser personToFollow, Company companyThatFollows)
+        [Authorize(Roles = "Company, PersonalUser")]
+        public ActionResult FollowPerson(PersonalUser personToFollow)
         {
-            foreach (var follower in personToFollow.CompanyFollowwers)
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+            foreach (var following in currentUser.CompaniesIFollow)
             {
-                if (follower == companyThatFollows)
+                if (following.Id == personToFollow.Id)
                     return View("Index");
             }
-            foreach (var following in companyThatFollows.PersonalFollowing)
-            {
-                if (following == personToFollow)
-                    return View("Index");
-            }
-            companyThatFollows.PersonalFollowing.Add(personToFollow);
-            personToFollow.CompanyFollowwers.Add(companyThatFollows);
+
+            currentUser.PersonsIFollow.Add(personToFollow);
             return View("Index");
         }
 
