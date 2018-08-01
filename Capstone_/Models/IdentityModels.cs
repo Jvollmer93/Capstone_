@@ -11,10 +11,24 @@ namespace Capstone_.Models
     public class ApplicationUser : IdentityUser
     {
         public string Role { get; set; }
-        public List<Company> CompanyFollowers { get; set; }
-        public List<Company> CompaniesIFollow { get; set; }
-        public List<PersonalUser> PersonalFollowers { get; set; }
-        public List<PersonalUser> PersonsIFollow { get; set; }
+        private List<Company> companiesIFollow;
+
+        public List<Company> CompaniesIFollow
+        {
+            get { return companiesIFollow; }
+            set { companiesIFollow = value; }
+        }
+        private List<PersonalUser> personsIFollow;
+
+        public List<PersonalUser> PersonsIFollow
+        {
+            get { return personsIFollow; }
+            set { personsIFollow = value; }
+        }
+        //public List<Company> CompanyFollowers { get; set; }
+        //public List<Company> CompaniesIFollow { get; set; }
+        //public List<PersonalUser> PersonalFollowers { get; set; }
+        //public List<PersonalUser> PersonsIFollow { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
