@@ -475,14 +475,15 @@ namespace Capstone_.Controllers
         }
 
         [Authorize(Roles = "Company, PersonalUser")]
-        public ActionResult FollowCompany(Company companyToFollow)
+        public ActionResult FollowCompany(int id)
         {
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+            Company companyToFollow = db.Companies.FirstOrDefault(x => x.Id == id);
 
             foreach (var following in currentUser.CompaniesIFollow)
             {
-                if (following.Id == companyToFollow.Id)
+                if (following.Id == id)
                     return View("Index");
             }
 
@@ -490,14 +491,15 @@ namespace Capstone_.Controllers
             return View("Index");
         }
         [Authorize(Roles = "Company, PersonalUser")]
-        public ActionResult FollowPerson(PersonalUser personToFollow)
+        public ActionResult FollowPerson(int id)
         {
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+            PersonalUser personToFollow = db.PersonalUsers.FirstOrDefault(x => x.Id == id);
 
             foreach (var following in currentUser.CompaniesIFollow)
             {
-                if (following.Id == personToFollow.Id)
+                if (following.Id == id)
                     return View("Index");
             }
 
